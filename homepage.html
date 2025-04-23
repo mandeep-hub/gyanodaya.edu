@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Gyanodaya English School</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: #004080;
+            color: #ffffff;
+            padding: 10px 0px;
+            margin-top: 30px;
+            position: relative;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            height: 50px;
+            margin-left: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .logo img{
+            height:100%;
+            width: auto;
+        }
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            background-color: #004080;
+            margin: 0;
+            padding: 10px 0;
+            gap: 20px;
+        
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #FE70DC;
+            background-color: rgb(222, 222, 222);
+            border-radius: 5px;
+        }
+
+
+       
+        .hero {
+            height: 100vh;
+             display: flex; 
+            justify-content: flex-start;
+            align-items: center;
+            color: #ffff00;
+            text-align: left;
+            margin-top: 0px;
+            background:
+                        url('C:\\Users\\sathi\\OneDrive\\Pictures\\487605470_1204209815048675_3091612581368429704_n.jpg') center/cover fixed;  
+            padding: 0 8%;
+            position: relative;
+        
+        } 
+  .menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  
+}
+
+@media (max-width: 768px) {
+  /* टगल बटन स्टाइलिङ */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: white;
+    z-index: 1002;
+    transition: all 0.3s ease;
+  }
+
+  /* हबर इफेक्टको लागि */
+  nav ul li {
+    margin: 8px 0;
+    transition: all 0.2s ease;
+  }
+
+  nav ul li:hover {
+    background-color: rgba(255,255,255,0.1);
+    transform: translateX(5px);
+  }
+
+  nav ul li a {
+    padding: 12px 20px;
+    display: block;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #FE70DC;
+    background-color: transparent;
+  }
+
+  /* ड्रपडाउन मेनुको स्पेसिङ */
+  nav ul {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px); /* बटन र मेनु बिचको ग्याप */
+    right: 15px;
+    width: 220px;
+    background: #004080;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 15px 0;
+    margin-top: 5px; /* अतिरिक्त स्पेसिङ */
+  }
+
+  nav ul.active {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  /* बटन एनिमेसन */
+  .menu-toggle.active {
+    color: #FE70DC;
+    transform: translateY(-50%) rotate(90deg);
+  }
+}
+        .hero-title {
+            position: relative;
+  font-size: 4rem;
+  font-weight: bold;
+  color: rgb(227, 18, 255);
+  font-family: 'Teko', sans-serif;
+  z-index: 1;
+  display: inline-block;
+  padding: 10px 20px;
+  line-height: 1.2;
+  text-align: left;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #ffcc00;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 5px #000;
+}
+
+.hero-social {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: white;
+}
+
+.hero-social i {
+    font-size: 28px;
+    color: #fff;
+    margin-left: 10px;
+    transition: transform 0.3s;
+}
+
+.hero-social i:hover {
+    transform: scale(1.2);
+    color: #1877F2;
+}
+.mobile-notice {
+    display: none; /* डेफल्ट लुकाउने */
+    background: linear-gradient(135deg, #FE70DC, #004080);
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+}
+
+.notice-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.mobile-notice h3 {
+    color: white;
+    margin: 10px 0;
+    font-size: 1.4rem;
+}
+
+.mobile-notice p {
+    color: #ffcc00;
+    margin-bottom: 15px;
+}
+
+.notice-button {
+    display: inline-block;
+    background: white;
+    color: #004080 !important;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.98); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(0.98); }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .info-section {
+        display: none !important; /* Original buttons लुकाउने */
+    }
+    
+    .mobile-notice {
+        display: block; /* Mobile मा मात्र देखाउने */
+    }
+    
+    /* Notification Animation */
+    .mobile-notice:hover {
+        animation: none;
+        transform: rotate(-2deg);
+    }
+    
+    .notice-button:hover {
+        background: #ffcc00;
+        transform: translateY(-2px);
+    }
+}
+.info-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+}
+
+.info-box {
+  flex: 1 1 250px;
+  max-width: 200px;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.info-box .icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.info-box:hover {
+  transform: translateY(-5px);
+}
+
+.orange {
+  background-color: #f7941d;
+}
+
+.dark {
+  background-color: #2e3b4e;
+}
+
+@media (max-width: 768px) {
+  .info-section {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+    /* Hide original buttons */
+    .hero .info-section {
+        display: none;
+    }
+    
+    /* Mobile menu buttons styling */
+    .mobile-buttons-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+        margin-top: 10px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .mobile-btn {
+        padding: 12px 20px;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    .admission {
+        background: linear-gradient(135deg, #FE70DC, #ff0066);
+        color: white !important;
+    }
+    
+    .facilities {
+        background: #007bff;
+        color: white !important;
+    }
+    
+    .news {
+        background: #2e3b4e;
+        color: white !important;
+    }
+    
+    .mobile-btn:hover {
+        transform: translateY(-2px);
+        opacity: 0.9;
+    }
+}
+
+/* Desktop View */
+@media (min-width: 769px) {
+    .mobile-buttons-container {
+        display: none !important;
+    }
+}
+.top-contact-bar {
+  background-color: #0562c0;
+  color: white;
+  padding: 8px 15px;
+  font-size: 0.95rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1001;
+  white-space: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.top-contact-bar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.top-contact-line {
+  display: inline-flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.top-contact-line span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+@media (max-width: 768px) {
+    .top-contact-bar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-left, .contact-right {
+        margin: 4px 0;
+    }
+}
+
+         @keyframes changeBackground {
+            0% {
+                background-image: url('C:\\Users\\sathi\\Downloads\\for gyanodaya page.jpg');
+            }
+            20% {
+                background-image: url('C:\\Users\\sathi\\Downloads\\381497327_785867183549609_2570678501626111860_n.jpg');
+            }
+            40% {
+                background-image: url('C:\\Users\\sathi\\Downloads\\276255545_1343429542797276_2413556677084895520_n.jpg');
+            }
+            60% {
+                background-image: url('C:\\Users\\sathi\\Downloads\\gyan.jpg');
+            } 
+            80% {
+                background-image: url('C:\\Users\\sathi\\Downloads\\gyanodaya,,.jpg');
+            }
+            100% {
+                background-image: url('C:\\Users\\sathi\\Downloads\\gyanodaya...jpg');
+            }
+         }
+
+  .features-section {
+  padding: 60px 10%;
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  color: #004080;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.features-slider-wrapper {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+
+}
+
+.features-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.features-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.feature-card {
+  flex: 0 0 auto;
+  width: 100%;
+  background: #ffffff;
+  padding: 30px 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  scroll-snap-align: start;
+  transition: transform 0.3s ease-in-out;
+}
+
+.feature-card:hover {
+  transform: scale(1.05);
+}
+
+.feature-card i {
+  font-size: 3rem;
+  color: #FE70DC;
+  margin-bottom: 15px;
+}
+
+.feature-card h3 {
+  font-size: 1.4rem;
+  color: #004080;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.arrow {
+  background-color: #004080;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  z-index: 10;
+}
+
+.arrow:hover {
+  background-color: #FE70DC;
+}
+
+@media (max-width: 768px) {
+  .feature-card {
+    flex: 0 0 90%;
+  }
+
+  .arrow {
+    display: none;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .guidelines-slider-container {
+        padding: 0 !important;
+        overflow: visible;
+    }
+    
+    .guidelines-slider {
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory;
+        gap: 0;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .guideline-card {
+        min-width: 100% !important;
+        scroll-snap-align: start;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    
+    .guide-arrow {
+        display: none !important;
+    }
+    
+    /* Hide scrollbar */
+    .guidelines-slider::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+    
+
+        /* .vision {
+            height: 300px;
+            width: 300px;
+            padding: 40px;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 50px auto;
+            transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+            opacity: 0;
+        }
+
+        .vision h2 {
+            font-size: 2.5rem;
+            color: #004080;
+            margin-bottom: 20px;
+            align-items: center;
+            text-align: center;
+        }
+
+        .vision p {
+            font-size: 1.2rem;
+            color: #333333;
+    
+        }*/
+.video-section {
+  text-align: center;
+  padding: 60px 10%;
+  background-color: #f9f9f9;
+}
+
+.video-section h1 {
+  font-size: 2.5rem;
+  color: #004080;
+  margin-bottom: 30px;
+}
+
+.video-slider-wrapper {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.video-slider {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 20px 0;
+}
+
+.video-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.video-card {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+
+.video-card video {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  border-radius: 10px;
+  border: 2px solid #004080;
+}
+
+.arrow {
+  background-color: #004080;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  z-index: 10;
+}
+
+.arrow:hover {
+  background-color: #FE70DC;
+}
+
+@media (max-width: 768px) {
+  .video-card video {
+    width: 100%;
+    max-height: 250px;
+  }
+
+  .arrow {
+    display: none;
+  }
+}
+
+        
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+.message-section {
+    padding: 60px 10%;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.message-section h2 {
+    font-size: 2.5rem;
+    color: #004080;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.message-slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.message-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+.message-slider::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
+
+.message-card {
+    width: 100%;
+    flex: 0 0 100%;
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    scroll-snap-align: start;
+    text-align: center;
+     transition: transform 0.3s ease-in-out;
+}
+
+.message-card:hover {
+    transform: scale(1.05);
+}
+
+.message-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 20%;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.message-card h4 {
+    font-size: 1.3rem;
+    color: #004080;
+    margin-bottom: 10px;
+}
+
+.message-card p {
+    font-size: 1rem;
+    font-style: italic;
+    color: #555;
+}
+.arrow {
+    background-color: #004080;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: background 0.3s ease;
+    z-index: 10;
+}
+
+.arrow:hover {
+    background-color: #FE70DC;
+}
+
+@media (max-width: 600px) {
+    .arrow {
+        display: none;
+    }
+}
+
+.programme-section {
+  padding: 60px 10%;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.programme-section h2 {
+  font-size: 2.5rem;
+  color: #004080;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.programme-slider-wrapper {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.programme-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 30px;
+  padding: 20px 0;
+  scrollbar-width: none; /* Firefox */
+}
+
+.programme-slider::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.programme-card-slide {
+  flex: 0 0 auto;
+  display: flex;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  scroll-snap-align: start;
+  width: 100%;
+}
+
+.programme-card-slide video {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.programme-text {
+  padding: 20px;
+  text-align: left;
+  width: 50%;
+}
+
+.programme-text h3 {
+  color: #004080;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.programme-text p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.arrow {
+  background-color: #004080;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  z-index: 10;
+}
+
+.arrow:hover {
+  background-color: #FE70DC;
+}
+
+@media (max-width: 768px) {
+  .programme-card-slide {
+    flex-direction: column;
+    min-width: 90%;
+  }
+
+  .programme-card-slide video,
+  .programme-text {
+    width: 100%;
+  }
+
+  .programme-text {
+    text-align: center;
+  }
+
+  .arrow {
+    display: none;
+  }
+}
+
+
+        /* Enroll Now Section */
+        .enroll-now {
+            height: 50vh;
+            background: url("D:\pexels-pixabay-267885.jpg") no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            text-align: center;
+            background-size: cover;
+            background-size: contain;
+            width: auto;
+           
+        
+        }
+
+        .enroll-now h1 {
+            font-size: 3rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .enroll-now:hover h1 {
+            transform: scale(1.1);
+            color: #FE70DC;
+        }
+
+        .enroll-now button {
+            background-color: #FE70DC;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .enroll-now button:hover {
+            background-color: #004080;
+        }
+        footer {
+  background-color: #333;
+  color: white;
+  padding: 40px 10%;
+  font-family: 'Roboto', sans-serif;
+}
+
+.footer-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.footer-header img {
+  width: 60px;
+  vertical-align: middle;
+}
+
+.footer-header h3 {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 2.2rem;
+  color: #56c3ff;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-box {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-box h4 {
+  font-size: 1.4rem;
+  color: #FE70DC;
+  margin-bottom: 15px;
+}
+
+.footer-box ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-box ul li {
+  margin-bottom: 10px;
+}
+
+.footer-box ul li i {
+  margin-right: 10px;
+  color: #56c3ff;
+}
+
+.footer-box a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-box a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.map-box iframe {
+  border-radius: 8px;
+  width: 100%;
+}
+
+.social-icons {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  color: #fff;
+  font-size: 1.3rem;
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+  color: #FE70DC;
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #aaa;
+  border-top: 1px solid #555;
+  padding-top: 15px;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-box {
+    text-align: center;
+  }
+}
+
+        @media (max-width: 1024px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .feedback-container {
+                flex-direction: column;
+            }
+
+            .feedback-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 10px;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+
+            .sidebar {
+                display: block;
+                width: 100%;
+                position: static;
+                height: auto;
+                box-shadow: none;
+            }
+
+            .video-section video {
+                width: 90%;
+            }
+
+            .enroll-now {
+                padding: 30px;
+            }
+
+            footer .map {
+                width: 90%;
+                height: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .video-section video {
+                width: 100%;
+            }
+        }
+        .hero-btn.join {
+  background-color: #4CAF50;
+}
+.join-form-popup {
+  display: none;
+  position: fixed;
+  z-index: 10001;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 2px solid #004080;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  width: 90%;
+  max-width: 500px;
+}
+
+.join-form-popup h2 {
+  color: #004080;
+  margin-bottom: 20px;
+}
+
+.join-form-popup input,
+.join-form-popup select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.join-form-popup button {
+  background-color: #004080;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.join-form-popup button:hover {
+  background-color: #FE70DC;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.contact-us-section {
+  padding: 60px 10%;
+  background-color: #eef3f9;
+  text-align: center;
+}
+
+.contact-us-section h2 {
+  font-size: 2.5rem;
+  color: #004080;
+  margin-bottom: 30px;
+}
+
+.contact-us-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.contact-map-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.school-contact-info {
+  text-align: left;
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.school-contact-info p {
+  margin: 8px 0;
+}
+
+.school-contact-info i {
+  color: #004080;
+  margin-right: 8px;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  padding: 12px;
+  font-size: 1.1rem;
+  background-color: #004080;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #FE70DC;
+}
+
+@media (max-width: 768px) {
+  .contact-us-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-map-info,
+  .contact-form {
+    width: 100%;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+
+  <div class="top-contact-bar">
+    <div class="top-contact-line">
+      <span><i class="fas fa-envelope"></i> info@gyanodaya.edu.np</span>
+      <span><i class="fas fa-phone"></i> +977-123456789</span>
+      <span><i class="fas fa-location-dot"></i> Bahuni, Morang, Nepal</span>
+    </div>
+  </div>
+  
+    <header>
+        <div class="logo">
+            <img src="D:\\att.IsENyCbACvruWiSMUlbjtzI-m6HokQ0iAzmt6hEDbZA__4_-removebg-preview.png" alt="Shree Gyanodaya Logo">
+        </div>
+        <nav class="navbar">
+          <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+          <ul id="navLinks">
+                <li><a href="homepage.html">Home</a></li> 
+                <li><a href="#programme"></section>programme</a></li>
+                <li><a href="news and events.html">News and Events</a></li>
+                <li><a href="#features">About Us</a></li>
+                 <!-- Mobile-only buttons -->
+            <li class="mobile-buttons-container">
+              <a href="its admission.html" class="mobile-btn admission">Admission</a>
+              <a href="#facilities" class="mobile-btn facilities">Our Facilities</a>
+              <a href="news and events.html" class="mobile-btn news">News & Events</a>
+          </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome <br>to<br> Shree Gyanodaya English School</h1>
+            <p class="hero-subtitle">Empowering minds, igniting futures</p>
+        
+            <div class="hero-social">
+                 <p2>Visit us on</p2>
+          
+            <a href="https://www.facebook.com/profile.php?id=100063790039958"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="hero-btn join" onclick="openForm()">Join Us</a>
+            </div>
+            <div class="mobile-notice">
+              <div class="notice-icon">📢</div>
+              <h3>Admissions Open!</h3>
+              <p>Explore our facilities and latest events</p>
+              <a href="news and events.html" class="notice-button">View Details</a>
+          </div>
+            <section class="info-section">
+              <div class="info-box">
+                <div class="icon"><i class="fas fa-university"></i></div>
+                <h3>Our Facilities</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adis.</p>
+              </div>
+              <div class="info-box orange">
+                <div class="icon"><i class="fas fa-clipboard-check"></i></div>
+                <h3>Admissions</h3>
+                <p>Quis ipsum suspendisse ultrices gravida.</p>
+              </div>
+              <div class="info-box dark">
+                <div class="icon"><i class="fas fa-calendar-alt"></i></div>
+                <h3>News & Events</h3>
+                <p>Lorem ipsum dolor amet consectetur ac.</p>
+              </div>
+            </section>
+            
+          </div>
+    </div>
+  
+    <!-- Features Section Start -->
+    <section class="features-section" id="features">
+    <h2 class="section-title">Our Features</h2>
+  
+    <div class="features-slider-wrapper">
+      <button class="arrow left" onclick="scrollFeatureLeft()"><i class="fas fa-chevron-left"></i></button>
+  
+      <div class="features-slider" id="featuresSlider">
+  
+        <div class="feature-card">
+          <i class="fas fa-chalkboard-teacher"></i>
+          <h3>Experienced Teachers</h3>
+          <p>Our qualified teachers inspire students to reach their full potential.</p>
+        </div>
+  
+        <div class="feature-card">
+          <i class="fas fa-book-reader"></i>
+          <h3>Quality Education</h3>
+          <p>We offer a balanced curriculum focusing on both academics and values.</p>
+        </div>
+  
+        <div class="feature-card">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>Scholarship Facility</h3>
+          <p>Deserving students are awarded scholarships every year.</p>
+        </div>
+  
+        <div class="feature-card">
+          <i class="fas fa-school"></i>
+          <h3>Modern Infrastructure</h3>
+          <p>Well-equipped classrooms, science labs, and libraries are available.</p>
+        </div>
+  
+        <div class="feature-card">
+          <i class="fas fa-paint-brush"></i>
+          <h3>Extra-Curricular Activities</h3>
+          <p>We believe in all-round development through arts, sports, and more.</p>
+        </div>
+  
+      </div>
+  
+      <button class="arrow right" onclick="scrollFeatureRight()"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    </section>
+    <!-- Features Section End -->
+    
+<!-- Guidelines Section मा यसरी परिवर्तन गर्नुहोस् -->
+<section class="guidelines-section">
+  <div class="guidelines-slider-container">
+      <button class="guide-arrow left" onclick="scrollGuide(-1)">❮</button>
+      
+      <div class="guidelines-slider">
+          <div class="guideline-card active">
+              <h2>Parental Guidelines</h2>
+              <ul>
+                  <li>Homework check: See if the kids have completed their homework.</li>
+                  <li>Educational materials: Ensure proper school supplies.</li>
+                  <li>Uniform maintenance: Keep uniforms clean and tidy.</li>
+              </ul>
+          </div>
+
+          <div class="guideline-card">
+              <h2>Student Guidelines</h2>
+              <ul>
+                  <li>Regular attendance and punctuality</li>
+                  <li>Respect for teachers and classmates</li>
+                  <li>Participation in extracurricular activities</li>
+              </ul>
+          </div>
+      </div>
+
+      <button class="guide-arrow right" onclick="scrollGuide(1)">❯</button>
+  </div>
+</section>
+    
+  
+    <!-- <section class="vision">
+        <div>
+         <div> <h2>Our Vision</h2></div>  
+            <p>At Shree Gyanodaya English School, we envision a world where every student is empowered with knowledge, skills, and values to lead and innovate. Our mission is to nurture critical thinkers, compassionate leaders, and lifelong learners who contribute positively to society.</p>
+        </div>
+    </section>
+
+    <section class="vision">
+        <div>
+            <p>To create a nurturing educational environment where students are inspired to achieve academic excellence, develop strong moral character, and become lifelong learners prepared to succeed in a global society.</p>
+        </div>
+    </section> -->
+
+    <section class="video-section" id="life">
+        <h1><b>Life at Gyanodaya School</b></h1>
+        
+        <div class="video-slider-wrapper">
+          <button class="arrow left" onclick="scrollVideoLeft()"><i class="fas fa-chevron-left"></i></button>
+          
+          <div class="video-slider" id="videoSlider">
+            <div class="video-card">
+              <video controls>
+                <source src="videos/life1.mp4" type="video/mp4">
+              </video>
+            </div>
+      
+            <div class="video-card">
+              <video controls>
+                <source src="videos/life2.mp4" type="video/mp4">
+              </video>
+            </div>
+      
+            <div class="video-card">
+              <video controls>
+                <source src="videos/life3.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+      
+          <button class="arrow right" onclick="scrollVideoRight()"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </section>
+      
+    
+  
+    <section class="message-section">
+        <h2>Message from Teachers</h2>
+        <div class="message-slider-wrapper">
+            <button class="arrow left" onclick="scrollLeft()"><i class="fas fa-chevron-left"></i></button>
+    
+    
+        <div class="message-slider" id="teacherSlider">
+            <div class="message-card">
+                <img src="D:\Download\410107455_6890741167700109_3526873232368011901_n.jpg" alt="Teacher 1">
+                <h4>Ocean katwal</h4>
+                <p>"Teaching at Gyanodaya has been a fulfilling journey with curious minds and supportive management."</p>
+            </div>
+            <div class="message-card">
+                <img src="images/teacher2.jpg" alt="Teacher 2">
+                <h4>Ramesh Karki</h4>
+                <p>"We aim to nurture young minds with a blend of knowledge and discipline."</p>
+            </div>
+            <div class="message-card">
+                <img src="images/teacher3.jpg" alt="Teacher 3">
+                <h4>Sita Gurung</h4>
+                <p>"Each child is unique and deserves quality education to grow and thrive."</p>
+            </div>
+            </div>
+            <button class="arrow right" onclick="scrollRight()"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+<!-- Programme Section Start -->
+<section class="programme-section" id="programme">
+    <h2>Our Programs</h2>
+  
+    <div class="programme-slider-wrapper">
+      <button class="arrow left" onclick="scrollProgrammeLeft()"><i class="fas fa-chevron-left"></i></button>
+  
+      <div class="programme-slider" id="programmeSlider">
+  
+        <!-- Card 1 -->
+        <div class="programme-card-slide">
+          <video src="videos/academic.mp4" controls></video>
+          <div class="programme-text">
+            <h3>Academic Excellence</h3>
+            <p>We promote quality education through smart classrooms and experienced faculty.</p>
+          </div>
+        </div>
+  
+        <!-- Card 2 -->
+        <div class="programme-card-slide">
+          <video src="videos/sports.mp4" controls></video>
+          <div class="programme-text">
+            <h3>Sports & Games</h3>
+            <p>We provide training and tournaments to build team spirit and physical fitness.</p>
+          </div>
+        </div>
+  
+        <!-- Card 3 -->
+        <div class="programme-card-slide">
+          <video src="videos/art.mp4" controls></video>
+          <div class="programme-text">
+            <h3>Creative Arts</h3>
+            <p>From dance to painting, students develop their talents beyond academics.</p>
+          </div>
+        </div>
+  
+      </div>
+  
+      <button class="arrow right" onclick="scrollProgrammeRight()"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </section>
+  <div id="overlay" onclick="closeForm()"></div>
+<div class="join-form-popup" id="joinForm">
+  <h2>New Admission Form</h2>
+  <form>
+    <input type="text" placeholder="Full Name" required>
+    <input type="number" placeholder="Age" required>
+    <select required>
+      <option value="">Select Grade</option>
+      <option>Nursery</option>
+      <option>LKG</option>
+      <option>UKG</option>
+      <option>Grade 1</option>
+      <option>Grade 2</option>
+      <option>Grade 3</option>
+      <option>Grade 4</option>
+      <option>Grade 5</option>
+      <option>Grade 6</option>
+      <option>Grade 7</option>
+      <option>Grade 8</option>
+      <option>Grade 9</option>
+      <option>Grade 10</option>
+    </select>
+    <input type="tel" placeholder="Parent's Contact Number" required>
+    <input type="email" placeholder="Parent's Email (Optional)">
+    <button type="submit">Submit</button>
+    <button type="button" onclick="closeForm()">Cancel</button>
+  </form>
+</div>
+
+<section class="contact-us-section">
+  <h2>Contact Us</h2>
+  <div class="contact-us-container">
+    
+    <!-- LEFT: Google Map + Contact Info -->
+    <div class="contact-map-info">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.6184078689155!2d87.5191781753491!3d26.6580789767937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef74828dd5f7ff%3A0x7d6a9dc12e7392b1!2sBahuni%2C%20Morang!5e0!3m2!1sen!2snp!4v1713447402611!5m2!1sen!2snp" 
+        width="100%" 
+        height="250" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+
+      <div class="school-contact-info">
+        <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Bahuni, Morang, Province 1, Nepal</p>
+        <p><i class="fas fa-envelope"></i> <strong>Email:</strong> info@gyanodaya.edu.np</p>
+        <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +977-123456789 / 021-123456</p>
+        <p><a href="https://www.google.com/maps/dir//Bahuni,+Morang" target="_blank" style="color:#004080; font-weight:bold;">📍 Get Directions</a></p>
+      </div>
+    </div>
+
+    <!-- RIGHT: Contact Form -->
+    <form class="contact-form" onsubmit="submitMessage(event)">
+      <input type="text" placeholder="Your Name" required>
+      <input type="text" placeholder="Your Grade (e.g., Grade 5)" required>
+      <textarea placeholder="Write your message..." rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+
+
+    <section class="enroll-now">
+        <h1>Enroll Now!</h1>
+        <button>Apply Here</button>
+    </section>
+    <footer>
+      <!-- Footer Top -->
+      <div class="footer-header">
+        <img src="D:\\att.IsENyCbACvruWiSMUlbjtzI-m6HokQ0iAzmt6hEDbZA__4_-removebg-preview.png" alt="Gyanodaya Logo">
+        <h3>Shree Gyanodaya English School</h3>
+      </div>
+    
+      <!-- Footer Content Area -->
+      <div class="footer-content">
+        
+        <!-- Navigation Links -->
+        <div class="footer-box">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="its gallery.html">Gallery</a></li>
+            <li><a href="its teachers.html">Teachers</a></li>
+            <li><a href="#programme">Programs</a></li>
+            <li><a href="its admission.html">Admissions</a></li>
+            <li><a href="news and events.html">News</a></li>
+            <li><a href="its about.html">About Us</a></li>
+          </ul>
+        </div>
+    
+        <!-- Contact Info -->
+        <div class="footer-box">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Bahuni, Morang, Nepal</li>
+            <li><i class="fas fa-envelope"></i> info@gyanodaya.edu.np</li>
+            <li><i class="fas fa-phone"></i> +977-123456789</li>
+          </ul>
+        </div>
+    
+        <!-- Google Map -->
+        <div class="footer-box map-box">
+          <h4>Find Us</h4>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.6184078689155!2d87.5191781753491!3d26.6580789767937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef74828dd5f7ff%3A0x7d6a9dc12e7392b1!2sBahuni%2C%20Morang!5e0!3m2!1sen!2snp!4v1713447402611!5m2!1sen!2snp" 
+            width="100%" 
+            height="180" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+    
+      </div>
+    
+      <!-- Footer Bottom -->
+      <div class="social-icons">
+        <a href="https://www.facebook.com/profile.php?id=100063790039958"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    
+      <div class="footer-bottom">
+        &copy; 2024 Shree Gyanodaya English School. All rights reserved.
+      </div>
+    </footer>
+
+
+    
+    <script>
+      function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  const toggleBtn = document.querySelector('.menu-toggle');
+  
+  nav.classList.toggle("active");
+  toggleBtn.classList.toggle("active");
+
+
+  document.addEventListener('click', function closeMenu(e) {
+    if(!e.target.closest('.navbar') && !e.target.closest('.menu-toggle')) {
+      nav.classList.remove("active");
+      toggleBtn.classList.remove("active");
+      document.removeEventListener('click', closeMenu);
+    }
+  });
+}   
+    </script>
+
+<script>
+// स्वाइप डिटेक्शन कोड
+let touchStartX = 0;
+let touchEndX = 0;
+
+const slider = document.querySelector('.guidelines-slider');
+
+slider.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+}, false);
+
+slider.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+}, false); 
+
+function handleSwipe() {
+    const swipeThreshold = 50;
+    
+    if(touchStartX - touchEndX > swipeThreshold) {
+        // Left swipe (next slide)
+        scrollGuide(1);
+    } else if (touchEndX - touchStartX > swipeThreshold) {
+        // Right swipe (previous slide)
+        scrollGuide(-1);
+    }
+}
+
+// ऑटो-स्क्रोल रोक्ने
+if(window.innerWidth <= 768) {
+    clearInterval(autoScroll);
+}
+</script>
+
+    
+
+    <script>
+        const videoSlider = document.getElementById('videoSlider');
+      
+        function scrollVideoLeft() {
+          videoSlider.scrollBy({ left: -videoSlider.clientWidth, behavior: 'smooth' });
+        }
+      
+        function scrollVideoRight() {
+          videoSlider.scrollBy({ left: videoSlider.clientWidth, behavior: 'smooth' });
+        }
+      </script>
+      
+
+    <script>
+        const featuresSlider = document.getElementById('featuresSlider');
+      
+        setInterval(() => {
+            if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
+                slider.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                slider.scrollBy({ left: 640, behavior: 'smooth' });
+            }
+        }, 3000);
+    
+        function scrollFeatureLeft() {
+          featuresSlider.scrollBy({ left: -640, behavior: 'smooth' }); // 2 cards approx.
+        }
+      
+        function scrollFeatureRight() {
+          featuresSlider.scrollBy({ left: 640, behavior: 'smooth' });
+        }
+      </script>
+      
+
+
+
+    <script>
+        const slider = document.getElementById('teacherSlider');
+    
+        // Auto scroll
+        setInterval(() => {
+            if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
+                slider.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                slider.scrollBy({ left: 240, behavior: 'smooth' });
+            }
+        }, 3000);
+    
+        // Manual scroll buttons
+        function scrollLeft() {
+            slider.scrollBy({ left: -240, behavior: 'smooth' });
+        }
+    
+        function scrollRight() {
+            slider.scrollBy({ left: 240, behavior: 'smooth' });
+        }
+    </script>
+    <script>
+        const programmeSlider = document.getElementById('programmeSlider');
+      
+        function scrollProgrammeLeft() {
+          programmeSlider.scrollBy({ left: -620, behavior: 'smooth' });
+        }
+      
+        function scrollProgrammeRight() {
+          programmeSlider.scrollBy({ left: 620, behavior: 'smooth' });
+        }
+      </script>
+      
+      <script>
+        function openForm() {
+          document.getElementById("joinForm").style.display = "block";
+          document.getElementById("overlay").style.display = "block";
+        }
+      
+        function closeForm() {
+          document.getElementById("joinForm").style.display = "none";
+          document.getElementById("overlay").style.display = "none";
+        }
+      </script>
+      
+      <script>
+        function submitMessage(event) {
+          event.preventDefault();
+          alert("Your message has been sent! Thank you for contacting us.");
+          event.target.reset(); // reset form after submit
+        }
+      </script>
+      
+      
+</body>
+</html>
